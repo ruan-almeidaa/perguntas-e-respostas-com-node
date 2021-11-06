@@ -4,7 +4,13 @@ const Sequelize = require("sequelize");
 const connection = new Sequelize("DATABASE_NAME","DATABASE_USER","DATABASE_PASSWORD",{
     host:"DATABASE_HOST",
     dialect:'postgres',
-    ssl: true
-})
+    protocol:'postgres',
+    dialectOptions:{
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    }
+});
 
 module.exports = connection;
