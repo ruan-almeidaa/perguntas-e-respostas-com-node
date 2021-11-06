@@ -88,4 +88,4 @@ app.post("/salvarresposta", (req,res) =>{
     })
 })
 
-app.listen(8080,()=>{console.log("app rodando");});
+app.listen(process.env.PORT || 8080);
